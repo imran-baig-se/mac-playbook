@@ -1,0 +1,28 @@
+---
+- name: install mac packages
+  hosts: mac-mini-systems
+  remote_user: mini-2
+  become: yes
+  roles:
+    - { role: mac-mini,    tags: [ 'brew' ] }
+
+- name: install mac packages
+  hosts: mac-mini-systems
+  remote_user: mini-3
+  become: yes
+  roles:
+    - { role: mac-mini,    tags: [ 'brew' ] }
+
+- name: install mac packages
+  hosts: mac-mini-systems
+  remote_user: mini-4
+  become: yes
+  roles:
+    - { role: mac-mini,    tags: [ 'brew' ] }
+
+
+
+
+
+
+

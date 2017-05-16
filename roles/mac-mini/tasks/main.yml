@@ -1,0 +1,13 @@
+---
+
+- name: install brew packagers
+  include: brew.yml
+  tags:
+    - brew
+    - mac
+    - apple
+- name: ios install
+  include: ios-install.yml
+  tags:
+    - ios
+    - apple

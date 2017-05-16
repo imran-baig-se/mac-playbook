@@ -1,0 +1,33 @@
+---
+- homebrew: name={{ item }} state=present
+  ignore_errors: true
+  with_items:
+  - wget
+  - htop
+  - docker-machine
+  - docker-compose
+  - zsh
+  - zsh-completions
+  - git
+  - golang
+  - goaccess
+  - htop
+  - rsyslog
+  - vim
+  - curl
+  - multitail
+  - node
+
+
+- homebrew_cask: name={{ item }} state=present
+  ignore_errors: true
+  with_items:
+  - google-chrome
+  - teamviewer
+  - slack
+  - docker
+  - cheatsheet
+  - virtualbox
+  - iterm2
+  - 1password
+  - cheatsheet

@@ -1,0 +1,659 @@
+2017-04-19 17:49:53,127 p=11528 u=imranbaig |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml': line 4, column 10, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  shell: docker stack deploy -c docker-compose.yml unifi
+    chdir: "{{unifi_server_opt_dir }}"
+         ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2017-04-19 17:50:40,608 p=11553 u=imranbaig |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml': line 4, column 10, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  shell: docker stack deploy -c docker-compose.yml unifi
+    chdir: "{{ unifi_server_opt_dir }}"
+         ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2017-04-19 17:51:25,157 p=11576 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (swarm_network). Using last defined value only.
+
+2017-04-19 17:51:25,158 p=11576 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (prefix). Using last defined value only.
+
+2017-04-19 17:51:25,158 p=11576 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (frontend_user). Using last defined value only.
+
+2017-04-19 17:51:25,158 p=11576 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (frontend_group). Using last defined value only.
+
+2017-04-19 17:51:25,160 p=11576 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (teamcity_user). Using last defined value only.
+
+2017-04-19 17:51:25,160 p=11576 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (teamcity_group). Using last defined value only.
+
+2017-04-19 17:51:25,204 p=11576 u=imranbaig |  PLAY [ci-setup] ****************************************************************
+2017-04-19 17:51:25,238 p=11576 u=imranbaig |  TASK [Gathering Facts] *********************************************************
+2017-04-19 17:51:25,238 p=11576 u=imranbaig |  Wednesday 19 April 2017  17:51:25 +0400 (0:00:00.042)       0:00:00.042 ******* 
+2017-04-19 17:51:52,999 p=11576 u=imranbaig |  fatal: [10.72.1.22]: UNREACHABLE! => {"changed": false, "msg": "SSH Error: data could not be sent to remote host \"10.72.1.22\". Make sure this host can be reached over ssh", "unreachable": true}
+2017-04-19 17:51:53,001 p=11576 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 17:51:53,001 p=11576 u=imranbaig |  PLAY RECAP *********************************************************************
+2017-04-19 17:51:53,001 p=11576 u=imranbaig |  10.72.1.22                 : ok=0    changed=0    unreachable=1    failed=0   
+2017-04-19 17:51:53,001 p=11576 u=imranbaig |  Wednesday 19 April 2017  17:51:53 +0400 (0:00:27.762)       0:00:27.805 ******* 
+2017-04-19 17:51:53,001 p=11576 u=imranbaig |  =============================================================================== 
+2017-04-19 17:51:53,001 p=11576 u=imranbaig |  Gathering Facts -------------------------------------------------------- 27.76s
+2017-04-19 17:55:19,116 p=11743 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (swarm_network). Using last defined value only.
+
+2017-04-19 17:55:19,117 p=11743 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (prefix). Using last defined value only.
+
+2017-04-19 17:55:19,117 p=11743 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (frontend_user). Using last defined value only.
+
+2017-04-19 17:55:19,117 p=11743 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (frontend_group). Using last defined value only.
+
+2017-04-19 17:55:19,119 p=11743 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (teamcity_user). Using last defined value only.
+
+2017-04-19 17:55:19,119 p=11743 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (teamcity_group). Using last defined value only.
+
+2017-04-19 17:55:19,137 p=11743 u=imranbaig |  PLAY [ci-setup] ****************************************************************
+2017-04-19 17:55:19,154 p=11743 u=imranbaig |  TASK [Gathering Facts] *********************************************************
+2017-04-19 17:55:19,155 p=11743 u=imranbaig |  Wednesday 19 April 2017  17:55:19 +0400 (0:00:00.021)       0:00:00.021 ******* 
+2017-04-19 17:55:29,138 p=11743 u=imranbaig |   [WARNING]: Removed restricted key from module data: ansible_docker_gwbridge =
+{u'macaddress': u'02:42:b3:41:66:cb', u'features': {u'tx_checksum_ipv4': u'off
+[fixed]', u'generic_receive_offload': u'on', u'tx_checksum_ipv6': u'off
+[fixed]', u'tx_scatter_gather_fraglist': u'on', u'rx_all': u'off [fixed]',
+u'highdma': u'on', u'rx_fcs': u'off [fixed]', u'tx_lockless': u'on [fixed]',
+u'tx_tcp_ecn_segmentation': u'on', u'tx_gso_robust': u'off [requested on]',
+u'tx_ipip_segmentation': u'on', u'tx_checksumming': u'on', u'vlan_challenged':
+u'off [fixed]', u'loopback': u'off [fixed]', u'fcoe_mtu': u'off [fixed]',
+u'tx_checksum_sctp': u'off [fixed]', u'tx_vlan_stag_hw_insert': u'off [fixed]',
+u'rx_vlan_stag_hw_parse': u'off [fixed]', u'tx_nocache_copy': u'on',
+u'rx_vlan_stag_filter': u'off [fixed]', u'large_receive_offload': u'off
+[fixed]', u'tx_checksum_ip_generic': u'on', u'rx_checksumming': u'off [fixed]',
+u'tx_tcp_segmentation': u'on', u'tx_fcoe_segmentation': u'off [requested on]',
+u'generic_segmentation_offload': u'on', u'tx_udp_tnl_segmentation': u'on',
+u'tcp_segmentation_offload': u'on', u'l2_fwd_offload': u'off [fixed]',
+u'rx_vlan_offload': u'off [fixed]', u'ntuple_filters': u'off [fixed]',
+u'rx_vlan_filter': u'off [fixed]', u'tx_tcp6_segmentation': u'on',
+u'tx_mpls_segmentation': u'on', u'udp_fragmentation_offload': u'on',
+u'scatter_gather': u'on', u'tx_sit_segmentation': u'on',
+u'tx_checksum_fcoe_crc': u'off [fixed]', u'tx_scatter_gather': u'on',
+u'netns_local': u'on [fixed]', u'tx_vlan_offload': u'on', u'receive_hashing':
+u'off [fixed]', u'tx_gre_segmentation': u'on'}, u'interfaces': [u'veth6e0a81f',
+u'veth8ec5e92', u'veth05947e2', u'veth8787c7e', u'veth88c2102',
+u'veth917a20a'], u'mtu': 1500, u'active': True, u'promisc': False, u'stp':
+False, u'ipv4': {u'broadcast': u'global', u'netmask': u'255.255.0.0',
+u'network': u'172.18.0.0', u'address': u'172.18.0.1'}, u'device':
+u'docker_gwbridge', u'type': u'bridge', u'id': u'8000.0242b34166cb'}
+
+2017-04-19 17:55:29,175 p=11743 u=imranbaig |  ok: [10.72.1.22]
+2017-04-19 17:55:29,183 p=11743 u=imranbaig |  TASK [docker-unifi : create unifi server dir] **********************************
+2017-04-19 17:55:29,183 p=11743 u=imranbaig |  Wednesday 19 April 2017  17:55:29 +0400 (0:00:10.028)       0:00:10.049 ******* 
+2017-04-19 17:55:29,487 p=11743 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02)
+2017-04-19 17:55:29,497 p=11743 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] *************************
+2017-04-19 17:55:29,498 p=11743 u=imranbaig |  Wednesday 19 April 2017  17:55:29 +0400 (0:00:00.314)       0:00:10.363 ******* 
+2017-04-19 17:55:30,140 p=11743 u=imranbaig |  changed: [10.72.1.22]
+2017-04-19 17:55:30,147 p=11743 u=imranbaig |  TASK [docker-unifi : ensure unifi_server docker-compose started] ***************
+2017-04-19 17:55:30,147 p=11743 u=imranbaig |  Wednesday 19 April 2017  17:55:30 +0400 (0:00:00.649)       0:00:11.013 ******* 
+2017-04-19 17:55:30,507 p=11743 u=imranbaig |  changed: [10.72.1.22]
+2017-04-19 17:55:30,508 p=11743 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker-compose-unifi_server] *************
+2017-04-19 17:55:30,508 p=11743 u=imranbaig |  Wednesday 19 April 2017  17:55:30 +0400 (0:00:00.360)       0:00:11.374 ******* 
+2017-04-19 17:55:30,802 p=11743 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.116094", "end": "2017-04-19 17:55:24.285834", "failed": true, "rc": 1, "start": "2017-04-19 17:55:24.169740", "stderr": "yaml: line 7: did not find expected '-' indicator", "stderr_lines": ["yaml: line 7: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2017-04-19 17:55:30,803 p=11743 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 17:55:30,803 p=11743 u=imranbaig |  PLAY RECAP *********************************************************************
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  10.72.1.22                 : ok=4    changed=2    unreachable=0    failed=1   
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  Wednesday 19 April 2017  17:55:30 +0400 (0:00:00.296)       0:00:11.670 ******* 
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  =============================================================================== 
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  Gathering Facts -------------------------------------------------------- 10.03s
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.65s
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  docker-unifi : ensure unifi_server docker-compose started --------------- 0.36s
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.31s
+2017-04-19 17:55:30,804 p=11743 u=imranbaig |  docker-unifi : start docker-compose-unifi_server ------------------------ 0.30s
+2017-04-19 17:57:34,784 p=11791 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (swarm_network). Using last defined value only.
+
+2017-04-19 17:57:34,785 p=11791 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (prefix). Using last defined value only.
+
+2017-04-19 17:57:34,785 p=11791 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (frontend_user). Using last defined value only.
+
+2017-04-19 17:57:34,785 p=11791 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (frontend_group). Using last defined value only.
+
+2017-04-19 17:57:34,787 p=11791 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (teamcity_user). Using last defined value only.
+
+2017-04-19 17:57:34,787 p=11791 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate
+dict key (teamcity_group). Using last defined value only.
+
+2017-04-19 17:57:34,803 p=11791 u=imranbaig |  PLAY [ci-setup] ****************************************************************
+2017-04-19 17:57:34,825 p=11791 u=imranbaig |  TASK [docker-unifi : create unifi server dir] **********************************
+2017-04-19 17:57:34,825 p=11791 u=imranbaig |  Wednesday 19 April 2017  17:57:34 +0400 (0:00:00.024)       0:00:00.024 ******* 
+2017-04-19 17:57:35,792 p=11791 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02)
+2017-04-19 17:57:35,800 p=11791 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] *************************
+2017-04-19 17:57:35,800 p=11791 u=imranbaig |  Wednesday 19 April 2017  17:57:35 +0400 (0:00:00.975)       0:00:00.999 ******* 
+2017-04-19 17:57:36,473 p=11791 u=imranbaig |  ok: [10.72.1.22]
+2017-04-19 17:57:36,481 p=11791 u=imranbaig |  TASK [docker-unifi : ensure unifi_server docker-compose started] ***************
+2017-04-19 17:57:36,481 p=11791 u=imranbaig |  Wednesday 19 April 2017  17:57:36 +0400 (0:00:00.681)       0:00:01.681 ******* 
+2017-04-19 17:57:36,835 p=11791 u=imranbaig |  changed: [10.72.1.22]
+2017-04-19 17:57:36,836 p=11791 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker-compose-unifi_server] *************
+2017-04-19 17:57:36,836 p=11791 u=imranbaig |  Wednesday 19 April 2017  17:57:36 +0400 (0:00:00.355)       0:00:02.036 ******* 
+2017-04-19 17:57:37,133 p=11791 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.116611", "end": "2017-04-19 17:57:30.610518", "failed": true, "rc": 1, "start": "2017-04-19 17:57:30.493907", "stderr": "yaml: line 7: did not find expected '-' indicator", "stderr_lines": ["yaml: line 7: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2017-04-19 17:57:37,135 p=11791 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 17:57:37,135 p=11791 u=imranbaig |  PLAY RECAP *********************************************************************
+2017-04-19 17:57:37,135 p=11791 u=imranbaig |  10.72.1.22                 : ok=3    changed=1    unreachable=0    failed=1   
+2017-04-19 17:57:37,136 p=11791 u=imranbaig |  Wednesday 19 April 2017  17:57:37 +0400 (0:00:00.299)       0:00:02.335 ******* 
+2017-04-19 17:57:37,136 p=11791 u=imranbaig |  =============================================================================== 
+2017-04-19 17:57:37,136 p=11791 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.98s
+2017-04-19 17:57:37,136 p=11791 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.68s
+2017-04-19 17:57:37,136 p=11791 u=imranbaig |  docker-unifi : ensure unifi_server docker-compose started --------------- 0.36s
+2017-04-19 17:57:37,136 p=11791 u=imranbaig |  docker-unifi : start docker-compose-unifi_server ------------------------ 0.30s
+2017-04-19 17:59:26,427 p=11875 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(swarm_network). Using last defined value only.
+
+2017-04-19 17:59:26,428 p=11875 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(prefix). Using last defined value only.
+
+2017-04-19 17:59:26,428 p=11875 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_user). Using last defined value only.
+
+2017-04-19 17:59:26,428 p=11875 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_group). Using last defined value only.
+
+2017-04-19 17:59:26,430 p=11875 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_user). Using last defined value only.
+
+2017-04-19 17:59:26,430 p=11875 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_group). Using last defined value only.
+
+2017-04-19 17:59:26,445 p=11875 u=imranbaig |  PLAY [ci-setup] ***********************************************************************
+2017-04-19 17:59:26,470 p=11875 u=imranbaig |  TASK [docker-unifi : create unifi server dir] *****************************************
+2017-04-19 17:59:26,470 p=11875 u=imranbaig |  Wednesday 19 April 2017  17:59:26 +0400 (0:00:00.027)       0:00:00.028 ******* 
+2017-04-19 17:59:27,429 p=11875 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02)
+2017-04-19 17:59:27,436 p=11875 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] ********************************
+2017-04-19 17:59:27,436 p=11875 u=imranbaig |  Wednesday 19 April 2017  17:59:27 +0400 (0:00:00.966)       0:00:00.994 ******* 
+2017-04-19 17:59:28,102 p=11875 u=imranbaig |  ok: [10.72.1.22]
+2017-04-19 17:59:28,109 p=11875 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] **************************************
+2017-04-19 17:59:28,109 p=11875 u=imranbaig |  Wednesday 19 April 2017  17:59:28 +0400 (0:00:00.672)       0:00:01.666 ******* 
+2017-04-19 17:59:28,464 p=11875 u=imranbaig |  changed: [10.72.1.22]
+2017-04-19 17:59:28,465 p=11875 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] ********************
+2017-04-19 17:59:28,465 p=11875 u=imranbaig |  Wednesday 19 April 2017  17:59:28 +0400 (0:00:00.356)       0:00:02.023 ******* 
+2017-04-19 17:59:28,779 p=11875 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.115385", "end": "2017-04-19 17:59:22.251756", "failed": true, "rc": 1, "start": "2017-04-19 17:59:22.136371", "stderr": "yaml: line 7: did not find expected '-' indicator", "stderr_lines": ["yaml: line 7: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2017-04-19 17:59:28,781 p=11875 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 17:59:28,781 p=11875 u=imranbaig |  PLAY RECAP ****************************************************************************
+2017-04-19 17:59:28,781 p=11875 u=imranbaig |  10.72.1.22                 : ok=3    changed=1    unreachable=0    failed=1   
+2017-04-19 17:59:28,781 p=11875 u=imranbaig |  Wednesday 19 April 2017  17:59:28 +0400 (0:00:00.315)       0:00:02.339 ******* 
+2017-04-19 17:59:28,782 p=11875 u=imranbaig |  =============================================================================== 
+2017-04-19 17:59:28,782 p=11875 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.97s
+2017-04-19 17:59:28,782 p=11875 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.67s
+2017-04-19 17:59:28,782 p=11875 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.36s
+2017-04-19 17:59:28,782 p=11875 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 0.32s
+2017-04-19 18:02:25,194 p=11918 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(swarm_network). Using last defined value only.
+
+2017-04-19 18:02:25,195 p=11918 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(prefix). Using last defined value only.
+
+2017-04-19 18:02:25,195 p=11918 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_user). Using last defined value only.
+
+2017-04-19 18:02:25,196 p=11918 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_group). Using last defined value only.
+
+2017-04-19 18:02:25,197 p=11918 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_user). Using last defined value only.
+
+2017-04-19 18:02:25,197 p=11918 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_group). Using last defined value only.
+
+2017-04-19 18:02:25,212 p=11918 u=imranbaig |  PLAY [ci-setup] ***********************************************************************
+2017-04-19 18:02:25,237 p=11918 u=imranbaig |  TASK [docker-unifi : create unifi server dir] *****************************************
+2017-04-19 18:02:25,238 p=11918 u=imranbaig |  Wednesday 19 April 2017  18:02:25 +0400 (0:00:00.028)       0:00:00.028 ******* 
+2017-04-19 18:02:26,176 p=11918 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02)
+2017-04-19 18:02:26,184 p=11918 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] ********************************
+2017-04-19 18:02:26,184 p=11918 u=imranbaig |  Wednesday 19 April 2017  18:02:26 +0400 (0:00:00.946)       0:00:00.975 ******* 
+2017-04-19 18:02:26,862 p=11918 u=imranbaig |  ok: [10.72.1.22]
+2017-04-19 18:02:26,870 p=11918 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] **************************************
+2017-04-19 18:02:26,870 p=11918 u=imranbaig |  Wednesday 19 April 2017  18:02:26 +0400 (0:00:00.685)       0:00:01.660 ******* 
+2017-04-19 18:02:27,217 p=11918 u=imranbaig |  changed: [10.72.1.22]
+2017-04-19 18:02:27,217 p=11918 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] ********************
+2017-04-19 18:02:27,218 p=11918 u=imranbaig |  Wednesday 19 April 2017  18:02:27 +0400 (0:00:00.347)       0:00:02.008 ******* 
+2017-04-19 18:02:27,511 p=11918 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.118470", "end": "2017-04-19 18:02:20.984172", "failed": true, "rc": 1, "start": "2017-04-19 18:02:20.865702", "stderr": "yaml: line 7: did not find expected '-' indicator", "stderr_lines": ["yaml: line 7: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2017-04-19 18:02:27,513 p=11918 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 18:02:27,513 p=11918 u=imranbaig |  PLAY RECAP ****************************************************************************
+2017-04-19 18:02:27,513 p=11918 u=imranbaig |  10.72.1.22                 : ok=3    changed=1    unreachable=0    failed=1   
+2017-04-19 18:02:27,514 p=11918 u=imranbaig |  Wednesday 19 April 2017  18:02:27 +0400 (0:00:00.296)       0:00:02.304 ******* 
+2017-04-19 18:02:27,514 p=11918 u=imranbaig |  =============================================================================== 
+2017-04-19 18:02:27,514 p=11918 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.95s
+2017-04-19 18:02:27,514 p=11918 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.69s
+2017-04-19 18:02:27,514 p=11918 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.35s
+2017-04-19 18:02:27,514 p=11918 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 0.30s
+2017-04-19 18:03:00,767 p=11955 u=imranbaig |  Using /Users/imranbaig/Workspace/local-ops/ansible.cfg as config file
+2017-04-19 18:03:00,836 p=11955 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(swarm_network). Using last defined value only.
+
+2017-04-19 18:03:00,837 p=11955 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(prefix). Using last defined value only.
+
+2017-04-19 18:03:00,837 p=11955 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_user). Using last defined value only.
+
+2017-04-19 18:03:00,837 p=11955 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_group). Using last defined value only.
+
+2017-04-19 18:03:00,839 p=11955 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_user). Using last defined value only.
+
+2017-04-19 18:03:00,839 p=11955 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_group). Using last defined value only.
+
+2017-04-19 18:03:00,853 p=11955 u=imranbaig |  PLAYBOOK: local-server-unifi.yml ******************************************************
+2017-04-19 18:03:00,853 p=11955 u=imranbaig |  1 plays in local-server-unifi.yml
+2017-04-19 18:03:00,855 p=11955 u=imranbaig |  PLAY [ci-setup] ***********************************************************************
+2017-04-19 18:03:00,870 p=11955 u=imranbaig |  META: ran handlers
+2017-04-19 18:03:00,879 p=11955 u=imranbaig |  TASK [docker-unifi : create unifi server dir] *****************************************
+2017-04-19 18:03:00,879 p=11955 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2
+2017-04-19 18:03:00,879 p=11955 u=imranbaig |  Wednesday 19 April 2017  18:03:00 +0400 (0:00:00.027)       0:00:00.027 ******* 
+2017-04-19 18:03:01,154 p=11955 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02) => {"changed": false, "gid": 1000, "group": "ubuntu", "item": "/opt/unifi-server-02", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server-02", "size": 4096, "state": "directory", "uid": 1000}
+2017-04-19 18:03:01,161 p=11955 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] ********************************
+2017-04-19 18:03:01,161 p=11955 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14
+2017-04-19 18:03:01,161 p=11955 u=imranbaig |  Wednesday 19 April 2017  18:03:01 +0400 (0:00:00.282)       0:00:00.309 ******* 
+2017-04-19 18:03:01,842 p=11955 u=imranbaig |  ok: [10.72.1.22] => {"changed": false, "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server-02/docker-compose.yml", "size": 579, "state": "file", "uid": 1000}
+2017-04-19 18:03:01,849 p=11955 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] **************************************
+2017-04-19 18:03:01,849 p=11955 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23
+2017-04-19 18:03:01,849 p=11955 u=imranbaig |  Wednesday 19 April 2017  18:03:01 +0400 (0:00:00.688)       0:00:00.997 ******* 
+2017-04-19 18:03:02,200 p=11955 u=imranbaig |  NOTIFIED HANDLER start docker compose unifi server
+2017-04-19 18:03:02,201 p=11955 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "/bin/true", "delta": "0:00:00.091232", "end": "2017-04-19 18:02:55.668628", "rc": 0, "start": "2017-04-19 18:02:55.577396", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2017-04-19 18:03:02,201 p=11955 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] ********************
+2017-04-19 18:03:02,201 p=11955 u=imranbaig |  Wednesday 19 April 2017  18:03:02 +0400 (0:00:00.352)       0:00:01.349 ******* 
+2017-04-19 18:03:02,497 p=11955 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.116864", "end": "2017-04-19 18:02:55.966077", "failed": true, "rc": 1, "start": "2017-04-19 18:02:55.849213", "stderr": "yaml: line 7: did not find expected '-' indicator", "stderr_lines": ["yaml: line 7: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2017-04-19 18:03:02,497 p=11955 u=imranbaig |  META: ran handlers
+2017-04-19 18:03:02,498 p=11955 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 18:03:02,498 p=11955 u=imranbaig |  PLAY RECAP ****************************************************************************
+2017-04-19 18:03:02,499 p=11955 u=imranbaig |  10.72.1.22                 : ok=3    changed=1    unreachable=0    failed=1   
+2017-04-19 18:03:02,499 p=11955 u=imranbaig |  Wednesday 19 April 2017  18:03:02 +0400 (0:00:00.297)       0:00:01.647 ******* 
+2017-04-19 18:03:02,499 p=11955 u=imranbaig |  =============================================================================== 
+2017-04-19 18:03:02,499 p=11955 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.69s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14 
+2017-04-19 18:03:02,499 p=11955 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.35s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23 
+2017-04-19 18:03:02,499 p=11955 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 0.30s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml:3 
+2017-04-19 18:03:02,499 p=11955 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.28s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2 
+2017-04-19 18:03:59,018 p=11990 u=imranbaig |  Using /Users/imranbaig/Workspace/local-ops/ansible.cfg as config file
+2017-04-19 18:03:59,095 p=11990 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(swarm_network). Using last defined value only.
+
+2017-04-19 18:03:59,095 p=11990 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(prefix). Using last defined value only.
+
+2017-04-19 18:03:59,096 p=11990 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_user). Using last defined value only.
+
+2017-04-19 18:03:59,096 p=11990 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_group). Using last defined value only.
+
+2017-04-19 18:03:59,097 p=11990 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_user). Using last defined value only.
+
+2017-04-19 18:03:59,098 p=11990 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_group). Using last defined value only.
+
+2017-04-19 18:03:59,112 p=11990 u=imranbaig |  PLAYBOOK: local-server-unifi.yml ******************************************************
+2017-04-19 18:03:59,112 p=11990 u=imranbaig |  1 plays in local-server-unifi.yml
+2017-04-19 18:03:59,114 p=11990 u=imranbaig |  PLAY [ci-setup] ***********************************************************************
+2017-04-19 18:03:59,128 p=11990 u=imranbaig |  META: ran handlers
+2017-04-19 18:03:59,136 p=11990 u=imranbaig |  TASK [docker-unifi : create unifi server dir] *****************************************
+2017-04-19 18:03:59,136 p=11990 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2
+2017-04-19 18:03:59,136 p=11990 u=imranbaig |  Wednesday 19 April 2017  18:03:59 +0400 (0:00:00.025)       0:00:00.025 ******* 
+2017-04-19 18:03:59,409 p=11990 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02) => {"changed": false, "gid": 1000, "group": "ubuntu", "item": "/opt/unifi-server-02", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server-02", "size": 4096, "state": "directory", "uid": 1000}
+2017-04-19 18:03:59,416 p=11990 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] ********************************
+2017-04-19 18:03:59,417 p=11990 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14
+2017-04-19 18:03:59,417 p=11990 u=imranbaig |  Wednesday 19 April 2017  18:03:59 +0400 (0:00:00.280)       0:00:00.306 ******* 
+2017-04-19 18:04:00,086 p=11990 u=imranbaig |  ok: [10.72.1.22] => {"changed": false, "gid": 1000, "group": "ubuntu", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server-02/docker-compose.yml", "size": 579, "state": "file", "uid": 1000}
+2017-04-19 18:04:00,093 p=11990 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] **************************************
+2017-04-19 18:04:00,093 p=11990 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23
+2017-04-19 18:04:00,093 p=11990 u=imranbaig |  Wednesday 19 April 2017  18:04:00 +0400 (0:00:00.676)       0:00:00.983 ******* 
+2017-04-19 18:04:00,438 p=11990 u=imranbaig |  NOTIFIED HANDLER start docker compose unifi server
+2017-04-19 18:04:00,439 p=11990 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "/bin/true", "delta": "0:00:00.086209", "end": "2017-04-19 18:03:53.901412", "rc": 0, "start": "2017-04-19 18:03:53.815203", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2017-04-19 18:04:00,439 p=11990 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] ********************
+2017-04-19 18:04:00,440 p=11990 u=imranbaig |  Wednesday 19 April 2017  18:04:00 +0400 (0:00:00.346)       0:00:01.329 ******* 
+2017-04-19 18:04:00,744 p=11990 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.112420", "end": "2017-04-19 18:03:54.210636", "failed": true, "rc": 1, "start": "2017-04-19 18:03:54.098216", "stderr": "yaml: line 7: did not find expected '-' indicator", "stderr_lines": ["yaml: line 7: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2017-04-19 18:04:00,745 p=11990 u=imranbaig |  META: ran handlers
+2017-04-19 18:04:00,746 p=11990 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 18:04:00,746 p=11990 u=imranbaig |  PLAY RECAP ****************************************************************************
+2017-04-19 18:04:00,746 p=11990 u=imranbaig |  10.72.1.22                 : ok=3    changed=1    unreachable=0    failed=1   
+2017-04-19 18:04:00,747 p=11990 u=imranbaig |  Wednesday 19 April 2017  18:04:00 +0400 (0:00:00.306)       0:00:01.636 ******* 
+2017-04-19 18:04:00,747 p=11990 u=imranbaig |  =============================================================================== 
+2017-04-19 18:04:00,747 p=11990 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.68s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14 
+2017-04-19 18:04:00,747 p=11990 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.35s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23 
+2017-04-19 18:04:00,747 p=11990 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 0.31s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml:4 
+2017-04-19 18:04:00,747 p=11990 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.28s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2 
+2017-04-19 18:05:58,244 p=12025 u=imranbaig |  Using /Users/imranbaig/Workspace/local-ops/ansible.cfg as config file
+2017-04-19 18:05:58,316 p=12025 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(swarm_network). Using last defined value only.
+
+2017-04-19 18:05:58,316 p=12025 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(prefix). Using last defined value only.
+
+2017-04-19 18:05:58,317 p=12025 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_user). Using last defined value only.
+
+2017-04-19 18:05:58,317 p=12025 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_group). Using last defined value only.
+
+2017-04-19 18:05:58,319 p=12025 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_user). Using last defined value only.
+
+2017-04-19 18:05:58,319 p=12025 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_group). Using last defined value only.
+
+2017-04-19 18:05:58,333 p=12025 u=imranbaig |  PLAYBOOK: local-server-unifi.yml ******************************************************
+2017-04-19 18:05:58,333 p=12025 u=imranbaig |  1 plays in local-server-unifi.yml
+2017-04-19 18:05:58,335 p=12025 u=imranbaig |  PLAY [ci-setup] ***********************************************************************
+2017-04-19 18:05:58,351 p=12025 u=imranbaig |  META: ran handlers
+2017-04-19 18:05:58,358 p=12025 u=imranbaig |  TASK [docker-unifi : create unifi server dir] *****************************************
+2017-04-19 18:05:58,358 p=12025 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2
+2017-04-19 18:05:58,358 p=12025 u=imranbaig |  Wednesday 19 April 2017  18:05:58 +0400 (0:00:00.026)       0:00:00.026 ******* 
+2017-04-19 18:05:59,321 p=12025 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02) => {"changed": false, "gid": 1000, "group": "ubuntu", "item": "/opt/unifi-server-02", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server-02", "size": 4096, "state": "directory", "uid": 1000}
+2017-04-19 18:05:59,328 p=12025 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] ********************************
+2017-04-19 18:05:59,328 p=12025 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14
+2017-04-19 18:05:59,329 p=12025 u=imranbaig |  Wednesday 19 April 2017  18:05:59 +0400 (0:00:00.970)       0:00:00.996 ******* 
+2017-04-19 18:06:00,171 p=12025 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "checksum": "9f8f3f16bd4df7891b407f2147f368a5e6ea917d", "dest": "/opt/unifi-server-02/docker-compose.yml", "gid": 1000, "group": "ubuntu", "md5sum": "9a5f1cc7c6d7a85127b1af4b633830b4", "mode": "0777", "owner": "ubuntu", "size": 570, "src": "/home/ubuntu/.ansible/tmp/ansible-tmp-1492610759.37-111082338294907/source", "state": "file", "uid": 1000}
+2017-04-19 18:06:00,178 p=12025 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] **************************************
+2017-04-19 18:06:00,178 p=12025 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23
+2017-04-19 18:06:00,178 p=12025 u=imranbaig |  Wednesday 19 April 2017  18:06:00 +0400 (0:00:00.849)       0:00:01.846 ******* 
+2017-04-19 18:06:00,523 p=12025 u=imranbaig |  NOTIFIED HANDLER start docker compose unifi server
+2017-04-19 18:06:00,523 p=12025 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "/bin/true", "delta": "0:00:00.090794", "end": "2017-04-19 18:05:53.988313", "rc": 0, "start": "2017-04-19 18:05:53.897519", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2017-04-19 18:06:00,524 p=12025 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] ********************
+2017-04-19 18:06:00,524 p=12025 u=imranbaig |  Wednesday 19 April 2017  18:06:00 +0400 (0:00:00.345)       0:00:02.192 ******* 
+2017-04-19 18:06:00,922 p=12025 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.213362", "end": "2017-04-19 18:05:54.382751", "failed": true, "rc": 1, "start": "2017-04-19 18:05:54.169389", "stderr": "Ignoring unsupported options: build\n\nError response from daemon: rpc error: code = 3 desc = ContainerSpec: image reference must be provided", "stderr_lines": ["Ignoring unsupported options: build", "", "Error response from daemon: rpc error: code = 3 desc = ContainerSpec: image reference must be provided"], "stdout": "Creating service unifi_unifi", "stdout_lines": ["Creating service unifi_unifi"]}
+2017-04-19 18:06:00,922 p=12025 u=imranbaig |  META: ran handlers
+2017-04-19 18:06:00,923 p=12025 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 18:06:00,923 p=12025 u=imranbaig |  PLAY RECAP ****************************************************************************
+2017-04-19 18:06:00,924 p=12025 u=imranbaig |  10.72.1.22                 : ok=3    changed=2    unreachable=0    failed=1   
+2017-04-19 18:06:00,924 p=12025 u=imranbaig |  Wednesday 19 April 2017  18:06:00 +0400 (0:00:00.399)       0:00:02.592 ******* 
+2017-04-19 18:06:00,924 p=12025 u=imranbaig |  =============================================================================== 
+2017-04-19 18:06:00,924 p=12025 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.97s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2 
+2017-04-19 18:06:00,924 p=12025 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.85s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14 
+2017-04-19 18:06:00,924 p=12025 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 0.40s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml:3 
+2017-04-19 18:06:00,924 p=12025 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.35s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23 
+2017-04-19 18:08:53,728 p=12068 u=imranbaig |  Using /Users/imranbaig/Workspace/local-ops/ansible.cfg as config file
+2017-04-19 18:08:53,802 p=12068 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(swarm_network). Using last defined value only.
+
+2017-04-19 18:08:53,802 p=12068 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(prefix). Using last defined value only.
+
+2017-04-19 18:08:53,803 p=12068 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_user). Using last defined value only.
+
+2017-04-19 18:08:53,803 p=12068 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_group). Using last defined value only.
+
+2017-04-19 18:08:53,805 p=12068 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_user). Using last defined value only.
+
+2017-04-19 18:08:53,805 p=12068 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_group). Using last defined value only.
+
+2017-04-19 18:08:53,818 p=12068 u=imranbaig |  PLAYBOOK: local-server-unifi.yml ******************************************************
+2017-04-19 18:08:53,819 p=12068 u=imranbaig |  1 plays in local-server-unifi.yml
+2017-04-19 18:08:53,820 p=12068 u=imranbaig |  PLAY [ci-setup] ***********************************************************************
+2017-04-19 18:08:53,835 p=12068 u=imranbaig |  META: ran handlers
+2017-04-19 18:08:53,842 p=12068 u=imranbaig |  TASK [docker-unifi : create unifi server dir] *****************************************
+2017-04-19 18:08:53,843 p=12068 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2
+2017-04-19 18:08:53,843 p=12068 u=imranbaig |  Wednesday 19 April 2017  18:08:53 +0400 (0:00:00.025)       0:00:00.025 ******* 
+2017-04-19 18:08:54,781 p=12068 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02) => {"changed": false, "gid": 1000, "group": "ubuntu", "item": "/opt/unifi-server-02", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server-02", "size": 4096, "state": "directory", "uid": 1000}
+2017-04-19 18:08:54,788 p=12068 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] ********************************
+2017-04-19 18:08:54,788 p=12068 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14
+2017-04-19 18:08:54,788 p=12068 u=imranbaig |  Wednesday 19 April 2017  18:08:54 +0400 (0:00:00.945)       0:00:00.971 ******* 
+2017-04-19 18:08:55,620 p=12068 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "checksum": "bd38b2f41b092380e88b664dd96ce7fb249dc69b", "dest": "/opt/unifi-server-02/docker-compose.yml", "gid": 1000, "group": "ubuntu", "md5sum": "9cf21cc5f69ea0a905cd1d4d59b51e92", "mode": "0777", "owner": "ubuntu", "size": 569, "src": "/home/ubuntu/.ansible/tmp/ansible-tmp-1492610934.83-212796247955981/source", "state": "file", "uid": 1000}
+2017-04-19 18:08:55,627 p=12068 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] **************************************
+2017-04-19 18:08:55,627 p=12068 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23
+2017-04-19 18:08:55,627 p=12068 u=imranbaig |  Wednesday 19 April 2017  18:08:55 +0400 (0:00:00.839)       0:00:01.810 ******* 
+2017-04-19 18:08:55,976 p=12068 u=imranbaig |  NOTIFIED HANDLER start docker compose unifi server
+2017-04-19 18:08:55,976 p=12068 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "/bin/true", "delta": "0:00:00.093144", "end": "2017-04-19 18:08:49.434353", "rc": 0, "start": "2017-04-19 18:08:49.341209", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2017-04-19 18:08:55,977 p=12068 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] ********************
+2017-04-19 18:08:55,977 p=12068 u=imranbaig |  Wednesday 19 April 2017  18:08:55 +0400 (0:00:00.350)       0:00:02.160 ******* 
+2017-04-19 18:08:56,292 p=12068 u=imranbaig |  fatal: [10.72.1.22]: FAILED! => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:00.132418", "end": "2017-04-19 18:08:49.749820", "failed": true, "rc": 1, "start": "2017-04-19 18:08:49.617402", "stderr": "services.unifi.image must be a string", "stderr_lines": ["services.unifi.image must be a string"], "stdout": "", "stdout_lines": []}
+2017-04-19 18:08:56,293 p=12068 u=imranbaig |  META: ran handlers
+2017-04-19 18:08:56,294 p=12068 u=imranbaig |  	to retry, use: --limit @./ssh/retry/local-server-unifi.retry
+
+2017-04-19 18:08:56,294 p=12068 u=imranbaig |  PLAY RECAP ****************************************************************************
+2017-04-19 18:08:56,294 p=12068 u=imranbaig |  10.72.1.22                 : ok=3    changed=2    unreachable=0    failed=1   
+2017-04-19 18:08:56,295 p=12068 u=imranbaig |  Wednesday 19 April 2017  18:08:56 +0400 (0:00:00.317)       0:00:02.477 ******* 
+2017-04-19 18:08:56,295 p=12068 u=imranbaig |  =============================================================================== 
+2017-04-19 18:08:56,295 p=12068 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.95s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2 
+2017-04-19 18:08:56,295 p=12068 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.84s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14 
+2017-04-19 18:08:56,295 p=12068 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.35s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23 
+2017-04-19 18:08:56,295 p=12068 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 0.32s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml:3 
+2017-04-19 18:10:05,407 p=12111 u=imranbaig |  Using /Users/imranbaig/Workspace/local-ops/ansible.cfg as config file
+2017-04-19 18:10:05,481 p=12111 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(swarm_network). Using last defined value only.
+
+2017-04-19 18:10:05,482 p=12111 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(prefix). Using last defined value only.
+
+2017-04-19 18:10:05,482 p=12111 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_user). Using last defined value only.
+
+2017-04-19 18:10:05,482 p=12111 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(frontend_group). Using last defined value only.
+
+2017-04-19 18:10:05,484 p=12111 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_user). Using last defined value only.
+
+2017-04-19 18:10:05,484 p=12111 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/global.yml, line 4, column 1, found a duplicate dict key
+(teamcity_group). Using last defined value only.
+
+2017-04-19 18:10:05,499 p=12111 u=imranbaig |  PLAYBOOK: local-server-unifi.yml ******************************************************
+2017-04-19 18:10:05,499 p=12111 u=imranbaig |  1 plays in local-server-unifi.yml
+2017-04-19 18:10:05,501 p=12111 u=imranbaig |  PLAY [ci-setup] ***********************************************************************
+2017-04-19 18:10:05,517 p=12111 u=imranbaig |  META: ran handlers
+2017-04-19 18:10:05,526 p=12111 u=imranbaig |  TASK [docker-unifi : create unifi server dir] *****************************************
+2017-04-19 18:10:05,526 p=12111 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2
+2017-04-19 18:10:05,526 p=12111 u=imranbaig |  Wednesday 19 April 2017  18:10:05 +0400 (0:00:00.029)       0:00:00.029 ******* 
+2017-04-19 18:10:06,489 p=12111 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server-02) => {"changed": false, "gid": 1000, "group": "ubuntu", "item": "/opt/unifi-server-02", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server-02", "size": 4096, "state": "directory", "uid": 1000}
+2017-04-19 18:10:06,496 p=12111 u=imranbaig |  TASK [docker-unifi : copy mongodb docker-compose file] ********************************
+2017-04-19 18:10:06,496 p=12111 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14
+2017-04-19 18:10:06,497 p=12111 u=imranbaig |  Wednesday 19 April 2017  18:10:06 +0400 (0:00:00.970)       0:00:00.999 ******* 
+2017-04-19 18:10:07,341 p=12111 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "checksum": "abd8b5cc86582304213164f844219e9cc93ebbdf", "dest": "/opt/unifi-server-02/docker-compose.yml", "gid": 1000, "group": "ubuntu", "md5sum": "cb1332f80ea1d278b2dc3ccf3f3ff783", "mode": "0777", "owner": "ubuntu", "size": 587, "src": "/home/ubuntu/.ansible/tmp/ansible-tmp-1492611006.54-130259849590881/source", "state": "file", "uid": 1000}
+2017-04-19 18:10:07,348 p=12111 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] **************************************
+2017-04-19 18:10:07,348 p=12111 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23
+2017-04-19 18:10:07,348 p=12111 u=imranbaig |  Wednesday 19 April 2017  18:10:07 +0400 (0:00:00.851)       0:00:01.850 ******* 
+2017-04-19 18:10:07,697 p=12111 u=imranbaig |  NOTIFIED HANDLER start docker compose unifi server
+2017-04-19 18:10:07,698 p=12111 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "/bin/true", "delta": "0:00:00.090761", "end": "2017-04-19 18:10:01.152863", "rc": 0, "start": "2017-04-19 18:10:01.062102", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2017-04-19 18:10:07,698 p=12111 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] ********************
+2017-04-19 18:10:07,698 p=12111 u=imranbaig |  Wednesday 19 April 2017  18:10:07 +0400 (0:00:00.350)       0:00:02.201 ******* 
+2017-04-19 18:10:10,951 p=12111 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:03.070092", "end": "2017-04-19 18:10:04.406390", "rc": 0, "start": "2017-04-19 18:10:01.336298", "stderr": "", "stderr_lines": [], "stdout": "Creating service unifi_unifi", "stdout_lines": ["Creating service unifi_unifi"]}
+2017-04-19 18:10:10,952 p=12111 u=imranbaig |  META: ran handlers
+2017-04-19 18:10:10,953 p=12111 u=imranbaig |  META: ran handlers
+2017-04-19 18:10:10,954 p=12111 u=imranbaig |  PLAY RECAP ****************************************************************************
+2017-04-19 18:10:10,954 p=12111 u=imranbaig |  10.72.1.22                 : ok=4    changed=3    unreachable=0    failed=0   
+2017-04-19 18:10:10,954 p=12111 u=imranbaig |  Wednesday 19 April 2017  18:10:10 +0400 (0:00:03.255)       0:00:05.456 ******* 
+2017-04-19 18:10:10,954 p=12111 u=imranbaig |  =============================================================================== 
+2017-04-19 18:10:10,954 p=12111 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 3.26s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml:3 
+2017-04-19 18:10:10,954 p=12111 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 0.97s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2 
+2017-04-19 18:10:10,954 p=12111 u=imranbaig |  docker-unifi : copy mongodb docker-compose file ------------------------- 0.85s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14 
+2017-04-19 18:10:10,955 p=12111 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.35s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23 
+2017-04-20 11:28:05,636 p=11086 u=imranbaig |  Using /Users/imranbaig/Workspace/local-ops/ansible.cfg as config file
+2017-04-20 11:28:05,897 p=11086 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/share-services/config.yml, line 4, column 1, found a duplicate
+dict key (swarm_network). Using last defined value only.
+
+2017-04-20 11:28:05,900 p=11086 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/config.yml, line 4, column 1, found a duplicate
+dict key (swarm_network). Using last defined value only.
+
+2017-04-20 11:28:05,901 p=11086 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/config.yml, line 4, column 1, found a duplicate
+dict key (teamcity_agent_install_folder). Using last defined value only.
+
+2017-04-20 11:28:05,901 p=11086 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/config.yml, line 4, column 1, found a duplicate
+dict key (teamcity_user). Using last defined value only.
+
+2017-04-20 11:28:05,902 p=11086 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/local-servers/config.yml, line 4, column 1, found a duplicate
+dict key (teamcity_group). Using last defined value only.
+
+2017-04-20 11:28:05,906 p=11086 u=imranbaig |   [WARNING]: While constructing a mapping from /Users/imranbaig/Workspace/local-
+ops/group_vars/backend-services/config.yml, line 3, column 1, found a duplicate
+dict key (swarm_network). Using last defined value only.
+
+2017-04-20 11:28:05,946 p=11086 u=imranbaig |  PLAYBOOK: local-server-unifi.yml ***********************************************
+2017-04-20 11:28:05,946 p=11086 u=imranbaig |  1 plays in local-server-unifi.yml
+2017-04-20 11:28:05,948 p=11086 u=imranbaig |  PLAY [ci-setup] ****************************************************************
+2017-04-20 11:28:05,994 p=11086 u=imranbaig |  META: ran handlers
+2017-04-20 11:28:06,001 p=11086 u=imranbaig |  TASK [docker-unifi : create unifi server dir] **********************************
+2017-04-20 11:28:06,001 p=11086 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2
+2017-04-20 11:28:06,001 p=11086 u=imranbaig |  Thursday 20 April 2017  11:28:06 +0400 (0:00:00.061)       0:00:00.061 ******** 
+2017-04-20 11:28:07,027 p=11086 u=imranbaig |  ok: [10.72.1.22] => (item=/opt/unifi-server) => {"changed": false, "gid": 1000, "group": "ubuntu", "item": "/opt/unifi-server", "mode": "0777", "owner": "ubuntu", "path": "/opt/unifi-server", "size": 4096, "state": "directory", "uid": 1000}
+2017-04-20 11:28:07,035 p=11086 u=imranbaig |  TASK [docker-unifi : copy unifi docker-compose file] ***************************
+2017-04-20 11:28:07,036 p=11086 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14
+2017-04-20 11:28:07,036 p=11086 u=imranbaig |  Thursday 20 April 2017  11:28:07 +0400 (0:00:01.034)       0:00:01.096 ******** 
+2017-04-20 11:28:07,700 p=11086 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "checksum": "abd8b5cc86582304213164f844219e9cc93ebbdf", "dest": "/opt/unifi-server/docker-compose.yml", "gid": 1000, "group": "ubuntu", "md5sum": "cb1332f80ea1d278b2dc3ccf3f3ff783", "mode": "0777", "owner": "ubuntu", "size": 587, "src": "/home/ubuntu/.ansible/tmp/ansible-tmp-1492673287.07-116419527702206/source", "state": "file", "uid": 1000}
+2017-04-20 11:28:07,706 p=11086 u=imranbaig |  TASK [docker-unifi : ensure unifi server docker] *******************************
+2017-04-20 11:28:07,707 p=11086 u=imranbaig |  task path: /Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23
+2017-04-20 11:28:07,707 p=11086 u=imranbaig |  Thursday 20 April 2017  11:28:07 +0400 (0:00:00.671)       0:00:01.767 ******** 
+2017-04-20 11:28:08,062 p=11086 u=imranbaig |  NOTIFIED HANDLER start docker compose unifi server
+2017-04-20 11:28:08,062 p=11086 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "/bin/true", "delta": "0:00:00.092444", "end": "2017-04-20 11:28:00.114189", "rc": 0, "start": "2017-04-20 11:28:00.021745", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2017-04-20 11:28:08,063 p=11086 u=imranbaig |  RUNNING HANDLER [docker-unifi : start docker compose unifi server] *************
+2017-04-20 11:28:08,063 p=11086 u=imranbaig |  Thursday 20 April 2017  11:28:08 +0400 (0:00:00.355)       0:00:02.123 ******** 
+2017-04-20 11:28:11,388 p=11086 u=imranbaig |  changed: [10.72.1.22] => {"changed": true, "cmd": "docker stack deploy -c docker-compose.yml unifi", "delta": "0:00:03.141217", "end": "2017-04-20 11:28:03.437774", "rc": 0, "start": "2017-04-20 11:28:00.296557", "stderr": "", "stderr_lines": [], "stdout": "Updating service unifi_unifi (id: uox96bu6z215eau4e0a2q5w1s)", "stdout_lines": ["Updating service unifi_unifi (id: uox96bu6z215eau4e0a2q5w1s)"]}
+2017-04-20 11:28:11,389 p=11086 u=imranbaig |  META: ran handlers
+2017-04-20 11:28:11,389 p=11086 u=imranbaig |  META: ran handlers
+2017-04-20 11:28:11,390 p=11086 u=imranbaig |  PLAY RECAP *********************************************************************
+2017-04-20 11:28:11,390 p=11086 u=imranbaig |  10.72.1.22                 : ok=4    changed=3    unreachable=0    failed=0   
+2017-04-20 11:28:11,390 p=11086 u=imranbaig |  Thursday 20 April 2017  11:28:11 +0400 (0:00:03.327)       0:00:05.450 ******** 
+2017-04-20 11:28:11,390 p=11086 u=imranbaig |  =============================================================================== 
+2017-04-20 11:28:11,390 p=11086 u=imranbaig |  docker-unifi : start docker compose unifi server ------------------------ 3.33s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/handlers/main.yml:3 
+2017-04-20 11:28:11,391 p=11086 u=imranbaig |  docker-unifi : create unifi server dir ---------------------------------- 1.03s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:2 
+2017-04-20 11:28:11,391 p=11086 u=imranbaig |  docker-unifi : copy unifi docker-compose file --------------------------- 0.67s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:14 
+2017-04-20 11:28:11,391 p=11086 u=imranbaig |  docker-unifi : ensure unifi server docker ------------------------------- 0.36s
+/Users/imranbaig/Workspace/local-ops/playbook/roles/docker-unifi/tasks/main.yml:23 
