@@ -15,13 +15,12 @@
   - zsh-completions
   - git
   - golang
-  - goaccessa
   - htop
-  - rsyslog
   - vim
   - curl
   - multitail
   - node
+
 
 
 - homebrew_cask: name={{ item }} state=present
@@ -32,6 +31,5 @@
   - docker
   - cheatsheet
   - virtualbox
-  - iterm2
   - 1password
   - cheatsheet
