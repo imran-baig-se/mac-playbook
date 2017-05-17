@@ -1,4 +1,9 @@
 ---
+
+- name:
+  shell: gem update --system
+  become: yes
+
 - homebrew: name={{ item }} state=present
   ignore_errors: true
   with_items:
@@ -10,7 +15,7 @@
   - zsh-completions
   - git
   - golang
-  - goaccess
+  - goaccessa
   - htop
   - rsyslog
   - vim
@@ -23,7 +28,6 @@
   ignore_errors: true
   with_items:
   - google-chrome
-  - teamviewer
   - slack
   - docker
   - cheatsheet

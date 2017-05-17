@@ -2,12 +2,15 @@
 #- xcversion: state=present version=7.1.1
 #- xcversion: state=selected version=7.1.1
 
+- name:
+  shell: gem install slather
+  become: yes
+
 - gem: name={{ item }} state=present
   ignore_errors: true
   with_items:
     - fastlane
     - cocoapods
-    - slather
     - snapshots
 
 - homebrew: name={{ item }} state=present
