@@ -4,7 +4,7 @@ services:
   caddy_service:
     container_name: cronicle_server
     image: baigops/cronicle-server-new:latest
-    ## settings_template_start ##
+    ## settings_template_start #
     privileged: true
     ulimits:
       nproc: 65535
