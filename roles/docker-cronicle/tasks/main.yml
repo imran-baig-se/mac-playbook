@@ -1,0 +1,34 @@
+---
+- name: users cronicle
+  import_tasks: users.yml
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-config
+
+- name: configure cronicle
+  import_tasks: configure.yml
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-config
+
+- name: install docker cronicle
+  import_tasks: install.yml
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-docker-cronicle
+
+- name: start docker cronicle
+  import_tasks: started.yml
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-docker-cronicle
+
+- name: install monit
+  import_tasks: monit.yml
+  tags:
+    - monit
+    - monit-config

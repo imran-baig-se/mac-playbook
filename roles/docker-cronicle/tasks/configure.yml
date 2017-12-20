@@ -1,0 +1,21 @@
+---
+- name: create cronicle dirs
+  file:
+    path="{{ item|safe|trim }}"
+    state=directory
+    owner="{{ cronicle_user }}"
+    group="{{ cronicle_group }}"
+    mode=777
+    recurse=yes
+  changed_when: "False"
+  with_items:
+    - "{{ cronicle_opt_dir }}"
+    - "{{ cronicle_conf_dir }}"
+    - "{{ cronicle_lib_dir }}"
+    - "{{ cronicle_logs_dir }}"
+
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-config-main
+

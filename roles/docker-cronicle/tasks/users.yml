@@ -1,0 +1,14 @@
+---
+- name: setup group
+  group: name="{{ cronicle_group }}" system=no
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-user
+
+- name: setup user
+  user: name="{{ cronicle_user }}" system=no group="{{ cronicle_group }}"
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-user

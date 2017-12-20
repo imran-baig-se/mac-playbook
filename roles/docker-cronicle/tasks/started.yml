@@ -1,0 +1,5 @@
+---
+- name: ensure cronicle docker-compose started
+  shell: /bin/true
+  notify:
+    - start docker-compose-cronicle

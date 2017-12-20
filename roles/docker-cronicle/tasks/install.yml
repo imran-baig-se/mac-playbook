@@ -1,0 +1,14 @@
+---
+- name: copy cronicle docker-compose file
+  template:
+     dest="{{ cronicle_opt_dir }}/docker-compose.yml"
+     owner="{{ cronicle_user }}"
+     group="{{ cronicle_group }}"
+     mode=777
+     src=docker-compose.yml
+  tags:
+    - cronicle
+    - cronicle-install
+    - cronicle-docker-compose
+    - cronicle-config
+    - cronicle-config-main

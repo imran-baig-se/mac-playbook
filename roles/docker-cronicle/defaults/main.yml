@@ -1,0 +1,21 @@
+---
+cronicle_version: "0.7.6"
+cronicle_user: cronicle
+cronicle_group: cronicle
+cronicle_http_port: "3012"
+cronicle_https_port: "3013"
+
+# data mounting
+mount_drive: true
+mount_path: /data
+drive_dev_path: /dev/xvdf
+mount_fs: ext4
+
+
+#
+cronicle_server_name: cronicle.tajawal.io
+
+cronicle_opt_dir: "/opt/cronicle"
+cronicle_conf_dir: "{{ cronicle_opt_dir }}/conf"
+cronicle_lib_dir: "{{ cronicle_opt_dir }}/lib"
+cronicle_logs_dir: "{{ cronicle_opt_dir }}/logs"

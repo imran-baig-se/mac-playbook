@@ -1,0 +1,34 @@
+version: '3.3'
+services:
+
+  caddy_service:
+    container_name: cronicle_server
+    image: baigops/cronicle-server-new:latest
+    ## settings_template_start ##
+    privileged: true
+    ulimits:
+      nproc: 65535
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 165536
+        hard: 165536
+    cap_add:
+      - ALL
+    # logging default settings from /etc/docker/daemon.json
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "udp://ops-logstash-external-{{ Env }}.tajawal.io:5555"
+        #max-size: "5m"
+        #max-file: "10"
+    ## settings_template_end ##
+    volumes:
+      - /data:/data-volume
+      - {{ cronicle_conf_dir }}:/var/conf/cronicle
+      - {{ cronicle_opt_dir }}:/var/opt/cronicle
+    ports:
+      - {{ cronicle_http_port }}
+      - {{ cronicle_https_port }}
+
