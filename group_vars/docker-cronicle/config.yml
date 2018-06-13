@@ -1,0 +1,12 @@
+---
+# data mounting
+mount_drive: true
+mount_path: /data
+drive_dev_path: /dev/xvdf
+mount_fs: ext4
+
+#Nginx
+cronicle_server_name: cronicle.tajawal.io
+
+cronicle_opt_dir: "/opt/cronicle"
+cronicle_config_dir: "{{ cronicle_opt_dir }}/config"
